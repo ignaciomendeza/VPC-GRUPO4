@@ -38,7 +38,7 @@ def manual_contrast_brightness(image, alpha, beta):
     
     # TODO: Escribir código aquí
     imagen_float = image.astype(np.float32) / 255.0
-    processed_img = alpha * imagen_float + beta
+    processed_img = alpha * imagen_float + (beta/255.0)
     processed_img = np.clip(processed_img, 0, 1)
     processed_img = (processed_img * 255).astype(np.uint8)
 
